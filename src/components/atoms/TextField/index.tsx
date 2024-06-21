@@ -1,9 +1,13 @@
 // src/components/atoms/TextField.tsx
-import React from 'react';
-import { TextField as MuiTextField, TextFieldProps } from '@mui/material';
+import { TextField as MuiTextField, TextFieldProps, styled } from '@mui/material';
+
+const StyledTextField = styled(MuiTextField)(({ theme }) => ({
+  width: '100%', 
+  margin: theme.spacing(1) 
+}));
 
 const TextField: React.FC<TextFieldProps> = (props) => {
-  return <MuiTextField {...props} />;
+  return <StyledTextField {...props} />;
 };
 
 export default TextField;

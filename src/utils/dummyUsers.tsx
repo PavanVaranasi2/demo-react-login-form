@@ -14,5 +14,13 @@ const users: User[] = [
 ];
 
 export const checkUser = (email: string, password: string): boolean => {
+  // Basic validation to check if email contains '@' and '.'
+  const isValidEmail = email.includes('@') && email.includes('.') && email.lastIndexOf('.') > email.indexOf('@') + 1;
+
+  if (!isValidEmail) {
+    return false;  // Return false if the email format is not valid
+  }
+
+  // Check if there is any user that matches both email and password
   return users.some((user) => user.email === email && user.password === password);
 };

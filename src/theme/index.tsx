@@ -1,25 +1,39 @@
-// src/theme/theme.ts
+// src/theme.ts
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
-    background: {
-      default: 'rgb(0, 0, 0, 0.8)',
-    },
     primary: {
-      main: '#1976d2',
+      main: '#556cd6',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#19857b',
+    },
+    error: {
+      main: '#ff1744',
+    },
+    background: {
+      default: '#fff',
     },
   },
   typography: {
     h1: {
-      fontSize: '2rem',
+      fontSize: '2.5rem',
       fontWeight: 'bold',
     },
+    body1: {
+      fontSize: '1rem',
+    },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',  // Disables uppercase text for buttons
+        }
+      }
+    }
+  }
 });
 
 export default theme;
